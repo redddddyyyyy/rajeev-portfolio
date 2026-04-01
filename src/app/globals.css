@@ -1,26 +1,77 @@
 @import "tailwindcss";
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #E8E8E8;
+  --card: #141414;
+  --card-hover: #1a1a1a;
+  --accent: #8B1A2B;
+  --accent-light: #C14B5A;
+  --text-secondary: #888888;
+  --border: #222222;
+  --warm-white: #FAFAF8;
+  --dark-text: #111111;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-text-secondary: var(--text-secondary);
+  --color-border: var(--border);
+  --color-warm-white: var(--warm-white);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-clash: 'Clash Display', sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+/* Aurora animation */
+@keyframes aurora {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Meteor animation */
+@keyframes meteor {
+  0% { transform: rotate(215deg) translateX(0); opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: rotate(215deg) translateX(-800px); opacity: 0; }
+}
+
+.animate-aurora {
+  animation: aurora 8s ease infinite;
+  background-size: 300% 300%;
+}
+
+.meteor {
+  animation: meteor linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #C14B5A, transparent);
 }
