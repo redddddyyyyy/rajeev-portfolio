@@ -3,30 +3,6 @@
 export default function CarlaAnimatedTile() {
   return (
     <div className="w-full h-full bg-[#0d0d0d] relative overflow-hidden">
-      <style>{`
-        @keyframes carDrive {
-          0% { offset-distance: 0%; }
-          100% { offset-distance: 100%; }
-        }
-        .car-dot {
-          position: absolute;
-          width: 10px;
-          height: 10px;
-          background: #C14B5A;
-          border-radius: 50%;
-          offset-path: path('M 60,200 C 150,200 150,100 250,100 C 350,100 350,200 450,200 C 500,200 520,160 540,140');
-          animation: carDrive 3s linear infinite;
-          box-shadow: 0 0 12px #C14B5A, 0 0 24px rgba(193,75,90,0.4);
-        }
-        @keyframes dashPulse {
-          0%, 100% { opacity: 0.3; }
-          50% { opacity: 0.7; }
-        }
-        .road-dash {
-          animation: dashPulse 1.5s ease-in-out infinite;
-        }
-      `}</style>
-
       {/* Road SVG */}
       <svg width="100%" height="100%" viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice">
         {/* Road */}
@@ -61,7 +37,7 @@ export default function CarlaAnimatedTile() {
 
       {/* Label */}
       <div className="absolute bottom-4 left-4">
-        <span className="text-xs font-mono text-[#555] uppercase tracking-widest">CARLA Sim · ROS2</span>
+        <span className="text-xs font-mono text-[#555] uppercase tracking-widest">ROS2 Nav2 · Humble</span>
       </div>
     </div>
   );
