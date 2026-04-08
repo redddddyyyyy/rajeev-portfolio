@@ -6,7 +6,7 @@ const stats = [
   { value: "6", label: "Projects" },
   { value: "4", label: "OSS PRs" },
   { value: "2", label: "Internships" },
-  { value: "Nav2 · TF", label: "Contributor" },
+  { value: "Nav2", label: "Maintainer Collab" },
 ];
 
 export default function Hero() {

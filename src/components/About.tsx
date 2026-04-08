@@ -34,7 +34,7 @@ export default function About() {
           <div className="space-y-5 border-t border-black/10 pt-6">
             <div>
               <p className="text-sm font-semibold text-[#111]">M.S. Robotics</p>
-              <p className="text-xs text-[#555] font-mono">University of Delaware · 2024–Nov 2026 · GPA 3.0</p>
+              <p className="text-xs text-[#555] font-mono">University of Delaware · 2024–Nov 2026</p>
             </div>
             <div>
               <p className="text-sm font-semibold text-[#111]">B.Tech Mechatronics</p>

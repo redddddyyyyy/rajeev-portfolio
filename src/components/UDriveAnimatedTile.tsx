@@ -3,30 +3,6 @@
 export default function UDriveAnimatedTile() {
   return (
     <div className="w-full h-full bg-[#0a0a0f] relative overflow-hidden">
-      <style>{`
-        @keyframes robotNav {
-          0%   { offset-distance: 0%; }
-          100% { offset-distance: 100%; }
-        }
-        .robot-dot {
-          position: absolute;
-          width: 8px;
-          height: 8px;
-          background: #4ade80;
-          border-radius: 50%;
-          offset-path: path('M 80,240 L 80,160 L 200,160 L 200,80 L 360,80 L 360,180 L 480,180 L 480,240');
-          animation: robotNav 4s linear infinite;
-          box-shadow: 0 0 10px #4ade80, 0 0 20px rgba(74,222,128,0.3);
-        }
-        @keyframes trailFade {
-          0%, 100% { opacity: 0.15; }
-          50% { opacity: 0.4; }
-        }
-        .nav-trail {
-          animation: trailFade 2s ease-in-out infinite;
-        }
-      `}</style>
-
       {/* Floor grid + path SVG */}
       <svg width="100%" height="100%" viewBox="0 0 560 300" preserveAspectRatio="xMidYMid slice">
         {/* Floor grid */}
