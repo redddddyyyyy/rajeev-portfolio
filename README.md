@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rajeev Reddy Portfolio
 
-## Getting Started
+Personal portfolio site for robotics software, AI infrastructure, computer vision, planning, and open-source contribution work.
 
-First, run the development server:
+The site is built with Next.js and TypeScript. It is meant to give recruiters a fast project-level view of the work behind my resume: what each project does, what stack it uses, what tradeoffs mattered, and where the code lives.
+
+## Featured Project Areas
+
+- AI-agentic data pipeline with n8n, JavaScript, Gemini, and Google Workspace APIs
+- NL2Plan LLM agent for typed tool calls against ROS 2 planning/perception/manipulation components
+- C/Pthreads BST synchronization benchmark with throughput and contention analysis
+- Hybrid A* path planner with ROS 2 integration and benchmark demos
+- Campus pedestrian-vehicle risk analyzer with homography, tracking, and event logs
+- Open-source PRs to LeRobot, TensorFlow, and CARLA ROS Bridge
+
+## Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+
+## Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+## Project Notes
 
-To learn more about Next.js, take a look at the following resources:
+- Resume PDF lives in `public/Rajeev_Reddy_Resume.pdf`.
+- Main page composition starts in `src/app/page.tsx`.
+- Project cards and portfolio content live under `src/components/`.
+- Keep public project descriptions aligned with GitHub READMEs and avoid unsupported metrics.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Priority Content To Keep Current
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- GitHub links for the active resume projects
+- Open-source PR statuses: open / merged / closed
+- Metrics only when backed by a reproducible run, CSV, or screenshot
+- Screenshots/GIFs that show the actual project output
