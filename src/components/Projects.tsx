@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import CarlaAnimatedTile from "./CarlaAnimatedTile";
-import UDriveAnimatedTile from "./UDriveAnimatedTile";
+import NL2PlanAnimatedTile from "./NL2PlanAnimatedTile";
 
 type Project = {
   num: string;
@@ -11,57 +10,65 @@ type Project = {
   tags: string[];
   github: string;
   image?: string;
-  animated?: "carla" | "udrive";
+  animated?: "nl2plan";
 };
 
 const projects: Project[] = [
   {
     num: "01",
-    title: "LiDAR-Camera Fusion with YOLO",
-    description: "Calibrated LiDAR and RGB camera extrinsics; projected point clouds onto image frames to label 3D bounding boxes using YOLO detections.",
-    tags: ["Sensor Fusion", "LiDAR", "Python"],
+    title: "LiDAR-Camera Fusion with YOLOv8",
+    description: "Frustum-based 3D object detection pipeline — calibrated LiDAR + RGB extrinsics, projected point clouds onto image frames, KITTI support and temporal tracking as a ROS 2 node.",
+    tags: ["Sensor Fusion", "LiDAR", "ROS 2", "YOLOv8"],
     github: "https://github.com/redddddyyyyy/lidar-camera-fusion",
     image: "https://raw.githubusercontent.com/redddddyyyyy/lidar-camera-fusion/master/assets/fusion_results.png",
   },
   {
     num: "02",
     title: "Multispectral Habitat Segmentation",
-    description: "Trained U-Net on 4-band drone imagery to classify wetland habitat types — segmentation pipeline runs end-to-end from raw GeoTIFF to labeled mask.",
-    tags: ["PyTorch", "U-Net", "Computer Vision"],
+    description: "U-Net trained on 4-band drone imagery to classify wetland habitat types — end-to-end pipeline from raw GeoTIFF to labeled mask.",
+    tags: ["PyTorch", "U-Net", "Remote Sensing"],
     github: "https://github.com/redddddyyyyy/multispectral-habitat-segmentation",
     image: "https://raw.githubusercontent.com/redddddyyyyy/multispectral-habitat-segmentation/main/assets/habitat_mosaic.png",
   },
   {
     num: "03",
+    title: "NL2Plan — LLM Robotics Agent",
+    description: "LLM agent that decomposes natural-language commands into tool calls against a Hybrid A* planner, GroundingDINO perception, and MoveIt2 manipulation in Gazebo — SayCan / PaLM-E lineage with a failure-recovery loop.",
+    tags: ["LLM Agent", "MoveIt2", "GroundingDINO", "ROS 2"],
+    github: "https://github.com/redddddyyyyy/nl2plan-agent",
+    animated: "nl2plan",
+  },
+  {
+    num: "04",
+    title: "Campus Risk CV",
+    description: "Detects pedestrian-vehicle proximity events from a campus crosswalk camera using YOLO12n detection, ByteTrack multi-object tracking, and homography for ground-plane distance estimation.",
+    tags: ["YOLO12", "ByteTrack", "Computer Vision", "AV Safety"],
+    github: "https://github.com/redddddyyyyy/campus-risk-cv",
+    image: "https://raw.githubusercontent.com/redddddyyyyy/campus-risk-cv/main/assets/sample_caution.png",
+  },
+  {
+    num: "05",
     title: "Hybrid A* Path Planner",
-    description: "Implemented Hybrid A* with Reeds-Shepp curve primitives for non-holonomic vehicles; visualized planned paths in a custom grid environment.",
-    tags: ["Path Planning", "Python", "Autonomous Vehicles"],
+    description: "Hybrid A* with Reeds-Shepp curve primitives for non-holonomic vehicles — kinematic constraints, obstacle avoidance, ROS 2 integration.",
+    tags: ["Path Planning", "AV", "ROS 2"],
     github: "https://github.com/redddddyyyyy/hybrid-astar-planner",
     image: "https://raw.githubusercontent.com/redddddyyyyy/hybrid-astar-planner/master/assets/planning_demo.gif",
   },
   {
-    num: "04",
-    title: "KUKA iiwa Trajectory Planning",
-    description: "MATLAB-based planner for a 7-DOF arm using smooth joint interpolation; compared raw waypoint vs. optimized trajectory to reduce jerk.",
-    tags: ["Robotics", "MATLAB", "Motion Planning"],
-    github: "https://github.com/redddddyyyyy/iiwa-trajectory-planning",
-    image: "https://raw.githubusercontent.com/redddddyyyyy/iiwa-trajectory-planning/main/assets/demo_preview_raw_vs_smooth.png",
-  },
-  {
-    num: "05",
-    title: "ROS 2 Nav2 Troubleshooting Kit",
-    description: "Practical diagnostic scripts for TF, QoS, AMCL, initial pose, and RViz failure modes on ROS2 Humble — built from real debugging sessions.",
-    tags: ["ROS2", "Nav2", "Diagnostics", "Tooling"],
-    github: "https://github.com/redddddyyyyy/ros2-nav2-troubleshooting",
-    animated: "carla",
-  },
-  {
     num: "06",
-    title: "UDrive — Indoor Food Delivery",
-    description: "Autonomous delivery robot using DBSCAN-based obstacle detection, ROS2 Nav2 for navigation, and 2D LiDAR for real-time mapping.",
-    tags: ["LiDAR", "ROS2", "DBSCAN"],
-    github: "https://github.com/redddddyyyyy/indoor-food-delivery-ros2",
-    animated: "udrive",
+    title: "Mobile Manipulator Sim",
+    description: "ROS 2 Gazebo stack for a mobile base + 6-DoF arm — SLAM Toolbox mapping, Nav2 autonomous navigation, and MoveIt2 pick-and-place with a URDF/Xacro-authored platform.",
+    tags: ["ROS 2", "Gazebo", "SLAM", "MoveIt2"],
+    github: "https://github.com/redddddyyyyy/mobile-arm-sim",
+    image: "https://raw.githubusercontent.com/redddddyyyyy/mobile-arm-sim/main/docs/images/mapping_complete.png",
+  },
+  {
+    num: "07",
+    title: "BST Sync Schemes · HPC",
+    description: "Benchmarking synchronized BST search under sequential, coarse-grain, and hand-over-hand fine-grain locking — throughput + strong-scaling analysis on multicore.",
+    tags: ["C/C++", "Concurrency", "HPC", "PAPI"],
+    github: "https://github.com/redddddyyyyy/bst-sync-schemes-hpc",
+    image: "https://raw.githubusercontent.com/redddddyyyyy/bst-sync-schemes-hpc/main/plots/throughput_bal_all_modes.png",
   },
 ];
 
@@ -78,8 +85,7 @@ function ProjectTile({ project, className }: { project: Project; className?: str
       style={{ minHeight: "380px" }}
     >
       <div className="absolute inset-0">
-        {project.animated === "carla" && <CarlaAnimatedTile />}
-        {project.animated === "udrive" && <UDriveAnimatedTile />}
+        {project.animated === "nl2plan" && <NL2PlanAnimatedTile />}
         {project.image && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -123,15 +129,16 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-8">
           <span className="text-xs font-mono uppercase tracking-widest text-[#555]">Selected Work</span>
-          <span className="text-xs font-mono text-[#444]">06 Projects</span>
+          <span className="text-xs font-mono text-[#444]">07 Projects</span>
         </div>
         <div className="grid grid-cols-6 gap-2">
           <div className="col-span-6 sm:col-span-4"><ProjectTile project={projects[0]} /></div>
           <div className="col-span-6 sm:col-span-2"><ProjectTile project={projects[1]} /></div>
-          <div className="col-span-6 sm:col-span-2"><ProjectTile project={projects[2]} /></div>
-          <div className="col-span-6 sm:col-span-4"><ProjectTile project={projects[3]} /></div>
-          <div className="col-span-6 sm:col-span-3"><ProjectTile project={projects[4]} /></div>
-          <div className="col-span-6 sm:col-span-3"><ProjectTile project={projects[5]} /></div>
+          <div className="col-span-6 sm:col-span-3"><ProjectTile project={projects[2]} /></div>
+          <div className="col-span-6 sm:col-span-3"><ProjectTile project={projects[3]} /></div>
+          <div className="col-span-6 sm:col-span-2"><ProjectTile project={projects[4]} /></div>
+          <div className="col-span-6 sm:col-span-2"><ProjectTile project={projects[5]} /></div>
+          <div className="col-span-6 sm:col-span-2"><ProjectTile project={projects[6]} /></div>
         </div>
         <div className="mt-6 text-right">
           <a href="https://github.com/redddddyyyyy" target="_blank" rel="noopener noreferrer" className="text-xs font-mono text-[#555] hover:text-[#C14B5A] transition-colors">

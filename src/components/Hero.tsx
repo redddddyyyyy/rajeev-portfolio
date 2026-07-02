@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "6", label: "Projects" },
-  { value: "4", label: "OSS PRs" },
+  { value: "7", label: "Projects" },
+  { value: "5", label: "OSS PRs" },
   { value: "2", label: "Internships" },
-  { value: "Nav2", label: "Maintainer Collab" },
+  { value: "LeRobot", label: "OSS Collab" },
 ];
 
 export default function Hero() {
@@ -26,7 +26,7 @@ export default function Hero() {
         >
           <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
           <span className="text-xs font-mono tracking-widest uppercase text-[#666]">
-            Available for Summer 2026 Internships
+            Open to Full-Time Opportunities · Dec 2026
           </span>
         </motion.div>
 
@@ -73,9 +73,9 @@ export default function Hero() {
           </div>
           <div>
             <p className="text-sm text-[#555] leading-relaxed max-w-md">
-              M.S. Robotics @ University of Delaware. I build perception pipelines,
-              autonomous navigation systems, and LiDAR-camera fusion architectures.
-              Actively seeking Summer 2026 internships in robotics and AI/ML.
+              M.S. Robotics @ University of Delaware (Dec 2026). I build perception
+              pipelines, autonomous navigation systems, and LiDAR-camera fusion
+              architectures. Open to hiring for AI/ML, autonomous driving, and robotics.
             </p>
           </div>
         </motion.div>

@@ -28,13 +28,14 @@ export default function About() {
             and ROS2-based autonomous navigation.
           </p>
           <p className="text-[#555] leading-relaxed text-sm mb-8">
-            I contribute to production-grade open-source projects like Nav2 and TensorFlow,
-            and I&apos;m actively looking for Summer 2026 internships in robotics and AI/ML.
+            I contribute to production-grade open-source projects like LeRobot, CARLA,
+            Nav2, and TensorFlow, and I&apos;m open to full-time and contract roles in
+            AI/ML, autonomous driving, and robotics.
           </p>
           <div className="space-y-5 border-t border-black/10 pt-6">
             <div>
               <p className="text-sm font-semibold text-[#111]">M.S. Robotics</p>
-              <p className="text-xs text-[#555] font-mono">University of Delaware · 2024–Nov 2026</p>
+              <p className="text-xs text-[#555] font-mono">University of Delaware · Jan 2025 – Dec 2026</p>
             </div>
             <div>
               <p className="text-sm font-semibold text-[#111]">B.Tech Mechatronics</p>

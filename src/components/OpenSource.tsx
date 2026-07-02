@@ -4,12 +4,21 @@ import { motion } from "framer-motion";
 
 const contributions = [
   {
-    repo: "ros-navigation/navigation2",
-    repoUrl: "https://github.com/ros-navigation/navigation2",
-    title: "nav2_costmap_2d: add TypeAdapter for Costmap2DStamped",
-    impact: "Enables zero-copy costmap passing between Nav2 nodes — reduces CPU overhead for high-frequency costmap updates.",
-    prUrl: "https://github.com/ros-navigation/navigation2/pull/5969",
-    prNumber: 5969,
+    repo: "huggingface/lerobot",
+    repoUrl: "https://github.com/huggingface/lerobot",
+    title: "Use SLERP for rotvec columns in ActionInterpolator",
+    impact: "Fixes silent orientation blending bug — naive lerp on rotation vectors produced non-shortest-path interpolation across quaternion double cover, breaking end-effector pose replay.",
+    prUrl: "https://github.com/huggingface/lerobot/pull/3710",
+    prNumber: 3710,
+    status: "open" as const,
+  },
+  {
+    repo: "carla-simulator/ros-bridge",
+    repoUrl: "https://github.com/carla-simulator/ros-bridge",
+    title: "Replace deprecated numpy.fromstring with frombuffer in LiDAR sensors",
+    impact: "Unblocks CARLA ROS bridge on modern NumPy — removes deprecation-error crash in the LiDAR sensor path used by every CARLA autonomous-driving stack.",
+    prUrl: "https://github.com/carla-simulator/ros-bridge/pull/765",
+    prNumber: 765,
     status: "open" as const,
   },
   {
